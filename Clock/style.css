@@ -1,0 +1,98 @@
+@import url("https://fonts.googleapis.com/css2?family=Shojumaru&display=swap");
+
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: "Shojumaru", cursive;
+}
+
+section {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(to right, #c31432, #240b36);
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+section::before {
+  content: "";
+  position: absolute;
+  top: 10%;
+  right: 20%;
+  width: 300px;
+  height: 300px;
+  border-radius: 10px;
+  background: linear-gradient(#ffc500, #c21500);
+  animation: animate 5s ease-in-out infinite;
+}
+
+section::after {
+  content: "";
+  position: absolute;
+  bottom: 10%;
+  left: 20%;
+  width: 250px;
+  height: 250px;
+  border-radius: 10px;
+  background: linear-gradient(#004e92, #000428);
+  animation: animate 5s ease-in-out infinite;
+  animation-delay: -2.5s;
+}
+
+@keyframes animate {
+  0% {
+    transform: rotateY(20px);
+  }
+  50% {
+    transform: translateY(20px);
+  }
+}
+
+.clock {
+  position: relative;
+  width: 700px;
+  height: 250px;
+  background: #ffffff0d;
+  box-shadow: 0 15px 25px #0000001a;
+  z-index: 100;
+  border-radius: 20px;
+  border: 1px solid #ffffff1a;
+  backdrop-filter: blur(20px);
+}
+
+.clock .container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.clock .container h2 {
+  font-size: 5rem;
+  color: #fdbb2d;
+}
+
+.clock .container h2:nth-child(odd) {
+  padding: 5px 15px;
+  border-radius: 10px;
+  background: #ffffff0d;
+  box-shadow: 0 15px 25px #00000033;
+  margin: 0px 10px;
+  border: 1px solid #ffffff1a;
+}
+
+.clock .container h2#seconds {
+  color: #1a2a6c;
+}
+
+#ampm {
+  position: relative;
+  top: -15%;
+  font-size: 2rem;
+  color: #1a2a6c;
+  font-weight: 700;
+}
